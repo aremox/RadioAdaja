@@ -1,0 +1,19 @@
+<Alloy>
+	<View id="noticias">
+		<View id="actionBar">
+			<ImageView id="botonMenu" onClick="mostrarMenu" />
+			<Label id="textoMenu">Noticias</Label>
+			<ImageView id="botonRecargar" onClick="recargar" />
+		</View>
+		<ListView id="listViewNoticias" defaultItemTemplate="template" onItemclick="detalle">
+			<Templates>
+				<ItemTemplate name="template">
+					<ImageView bindId="pic" id="icon" />
+					<Label bindId="info" id="title" />
+					<Label bindId="es_info" id="subtitle" />
+				</ItemTemplate>
+			</Templates>
+			<ListSection  id="listaNoticias"></ListSection>
+		</ListView>
+	</View>
+</Alloy>

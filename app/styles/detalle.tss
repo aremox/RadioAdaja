@@ -1,0 +1,74 @@
+
+".container" : {
+  backgroundColor:'white',
+  layout: 'vertical'
+  
+},
+"#actionBar": {
+	top:0,
+	height:"44dp",
+	backgroundImage: "/bg_publicidad.png",
+	color: 'white'
+},
+"#botonMenu": {
+	image: "/material/ic_chevron_left_white_48dp.png",
+	width: "40dp",
+	left: "6dp",
+	backgroundColor:"transparent"
+},
+"#textoMenu": {
+	color: 'white',
+	font: {
+		fontFamily: 'Arial',
+		fontSize: '20dp',
+		fontWeight: 'bold'
+	},
+	shadowColor: '#333333',
+	shadowRadius: 6,
+	shadowOffset: {
+		x: 4,
+		y: 4
+	},
+	left: "55dp"
+},
+"#imagenNoticia":{
+	backgroundColor: "black",
+	height: "30%"
+},
+"#vTitulo":{
+	backgroundImage: "/bg_publicidad.png",
+	verticalAlign: "Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP",
+	height: "40dp"
+},
+"#titulo":{
+	
+	verticalAlign: "Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP",
+	left: "6dp",
+	color: 'white',
+	textAlign:"Ti.UI.TEXT_ALIGNMENT_LEFT",
+	font: {
+		fontFamily: 'Arial',
+		fontWeight: 'bold'
+	},
+	zIndex: 5
+},
+"#textoNoticia":{
+	color: '#232323',
+	left: "6dp",
+	right: "6dp",
+	font: {
+		fontFamily: 'Arial'
+	}
+},
+"#botonRecargar": {
+	image: "/material/ic_share_white_48dp.png",
+	width: "40dp",
+	right: "6dp",
+	backgroundColor:"transparent"
+}, 
+"#botonFavorito":{
+	image: "/material/ic_star_outline_white_48dp.png",
+	width: "40dp",
+	right: "52dp",
+	backgroundColor:"transparent"
+}

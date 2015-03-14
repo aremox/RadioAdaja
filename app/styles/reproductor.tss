@@ -1,0 +1,59 @@
+"#toast": {},
+"#estado":{
+	color: "#cccccc",
+	bottom: "46dp",
+	left: "26%"
+},
+"#radio": {
+	backgroundColor: '#333333',
+	width: "100%",
+	height: "65dp",
+	layout: "horizontal",
+	bottom: 0
+},
+
+"#sonido": {
+	height: 40,
+	width: "70%",
+	leftTrackImage: '/bg_publicidad.png',
+	highlightedLeftTrackImage: '/bg_publicidad.png',
+	disabledLeftTrackImage: '/textura_gris.png',
+	centerTrackImage: '/textura_gris.png',
+	highlightedCenterTrackImage: '/textura_gris.png',
+	disabledCenterTrackImage: '/textura_gris.png',
+	rightTrackImage: '/texture_gris2.png',
+	highlightedRightTrackImage: '/texture_gris2.png',
+	disabledRightTrackImage: '/texture_gris2.png',
+	leftThumbImage: '/textura_gris.png',
+	highlightedLeftThumbImage: '/textura_gris.png',
+	disabledLeftThumbImage: '/texture_gris2.png',
+	rightThumbImage: '/texture_gris2.png',
+	highlightedRightThumbImage: '/texture_gris2.png',
+	disabledRightThumbImage: '/texture_gris2.png',
+	thumbImage: '/deslizante2.png',
+	shadowColor: '#555',
+	shadowRadius: 5,
+	shadowOffset: {
+		x: 3,
+		y: 3
+	},
+	color: '#fff',
+	textAlign: "center",
+	borderColor: "transparent",
+	backgroundColor: "transparent",
+	borderRadius: 10,
+	min: 0,
+	max: 100,
+	leftValue: 25,
+	rightValue: 50,
+	enabled: true
+},
+"#startStopButton":{
+	backgroundImage: "/bg_publicidad.png",
+	image: "/material/ic_play_arrow_white_48dp.png",
+	top: 5,
+	left: 10,
+	width: "55dp",
+	height: "55dp",
+	borderRadius: 50
+}

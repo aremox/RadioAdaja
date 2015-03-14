@@ -1,0 +1,122 @@
+"#central":{
+	bottom: "65dp"
+},
+"#actionBar": {
+	top:0,
+	height:"44dp",
+	backgroundImage: "/bg_publicidad.png",
+	color: 'white'
+},
+"#botonMenu": {
+	image: "/material/ic_menu_white_48dp.png",
+	width: "40dp",
+	left: "6dp",
+	backgroundColor:"transparent"
+},
+"#botonRecargar": {
+	image: "/material/ic_refresh_white_48dp.png",
+	width: "40dp",
+	right: "6dp",
+	backgroundColor:"transparent"
+} ,
+"#textoMenu": {
+	color: 'white',
+	font: {
+		fontFamily: 'Arial',
+		fontSize: '20dp',
+		fontWeight: 'bold'
+	},
+	shadowColor: '#333333',
+	shadowRadius: 6,
+	shadowOffset: {
+		x: 4,
+		y: 4
+	},
+	left: "55dp"
+},
+"#directoL": {
+	top: "44dp",
+	layout:"composite",
+	width: "100%",
+	height: "175dp"
+},
+"#logo_directo": {
+	top: 0,
+	left: 0,
+	height: "100%",
+	image: "/radioadajadirecto.png"
+},
+"#titulo_directo": {
+	color: '#232323',
+	right: "6dp",
+	font: {
+		fontFamily: 'Arial',
+		fontSize: '25dp',
+		fontWeight: 'bold'
+	},
+	textAlign:"Ti.UI.TEXT_ALIGNMENT_RIGHT",
+	shadowColor: '#999999',
+	shadowRadius: 6,
+	shadowOffset: {
+		x: 4,
+		y: 4
+	}
+},
+"#vAContinuacion":{
+	backgroundImage: "/bg_publicidad.png",
+	color: 'white',
+	top: "219dp",
+	height: "40dp",
+	width: "100%",
+	textAlign:"Ti.UI.TEXT_ALIGNMENT_LEFT",
+	zIndex: 5
+},
+"#aContinuacion": {
+	color: 'white',
+	font: {
+		fontFamily: 'Arial',
+		fontSize: '20dp',
+		fontWeight: 'bold'
+	},
+	shadowColor: '#333333',
+	shadowRadius: 6,
+	shadowOffset: {
+		x: 4,
+		y: 4
+	},
+	left: "6dp"
+	
+},
+"#listView":{
+	top:"259dp",
+	separatorColor : "gray",
+	zIndex: 4
+},
+"#title": {
+	color: 'black',
+	font: {
+		fontFamily: 'Arial',
+		fontSize: '17dp',
+		fontWeight: 'bold'
+	},
+	left: '7dp'
+	
+},
+"#subtitle": {
+	color: 'black',
+	font: {
+		fontFamily: 'Arial',
+		fontSize: '17dp'
+	},
+	left: '60dp'
+}
+"#listaProgramacion":{
+	
+},
+"#listaProgramacion2":{
+	
+},
+"ListItem":{
+	height: '60 dp',
+	zIndex: 3
+}

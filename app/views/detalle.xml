@@ -1,0 +1,16 @@
+<Alloy>
+	<Window id="index" >
+	<View class="container">
+		<View id="actionBar">
+			<ImageView id="botonMenu" onClick="mostrarMenu" />
+			<Label id="textoMenu" />
+			<ImageView id="botonFavorito" onClick="anadirFavorito" />
+			<ImageView id="botonRecargar" onClick="compartir" />
+		</View>
+		<ImageView id="imagenNoticia"/>
+		<View id="vTitulo"><Label id="titulo"/></View>
+		<ScrollView  id="vtextoNoticia" showVerticalScrollIndicator="true"><Label id="textoNoticia"/></ScrollView>
+		
+	</View>
+	</Window>
+</Alloy>

@@ -1,0 +1,49 @@
+"#menuIzq": {
+	backgroundColor: '#333333'
+},
+"#drawer": {
+	openDrawerGestureMode: "OPEN_MODE_ALL",
+	closeDrawerGestureMode: "CLOSE_MODE_MARGIN",
+	showShadow: true,
+	shadowWidth: "10dp",
+	backgroundColor: 'white',
+	leftDrawerWidth: 200
+}
+"Window": {
+	
+},
+"#centroW":{
+	backgroundColor: 'white'
+},
+"#menuIzq":{
+	layout: 'vertical'
+},
+"#reproductor":{},
+"#listViewMenu":{
+	backgroundColor: '#333333',
+	separatorColor : "gray",
+	zIndex: 4
+},
+"#title": {
+	color: 'white',
+	font: {
+		fontFamily: 'Arial',
+		fontSize: '17dp',
+		fontWeight: 'bold'
+	},
+	left: '7dp'
+	
+},
+"#subtitle": {
+	color: 'black',
+	font: {
+		fontFamily: 'Arial',
+		fontSize: '17dp'
+	},
+	left: '60dp'
+},
+"ListItem":{
+	height: '60 dp',
+	zIndex: 3,
+	backgroundImage: "/bg_publicidad.png"
+}

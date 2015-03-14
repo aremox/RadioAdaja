@@ -1,0 +1,9 @@
+<Alloy>
+	<Notification id="toast" platform="android" message="Please Stand By" duration="Ti.UI.NOTIFICATION_DURATION_LONG" />
+	<View id="radio">
+		<ImageView id="startStopButton" onClick="stopAudio" />
+		<!-- <Button id="startStopButton" onClick="stopAudio"/> -->
+		<Slider id="sonido" onChange="actualizarVolumen">Sonido</Slider>
+	</View>
+	<Label id="estado" />
+</Alloy>

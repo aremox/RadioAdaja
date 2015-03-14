@@ -1,0 +1,24 @@
+<Alloy>
+	<Collection src="favoritos"/>
+	<View id="favorito">
+		<View id="actionBar">
+			<ImageView id="botonMenu" onClick="mostrarMenu" />
+			<Label id="textoMenu">Favoritos</Label>
+		</View>
+
+		<!--	dataTransform="transformFunction"	-->
+		<ListView id="listViewNoticias" defaultItemTemplate="template" onItemclick="detalle">
+			<Templates>
+				<ItemTemplate name="template">
+					<ImageView bindId="pic" id="icon" />
+					<Label bindId="info" id="title" />
+					<Label bindId="es_info" id="subtitle" />
+					<Label bindId="url" id="url" />
+				</ItemTemplate>
+			</Templates>
+			<ListSection id="listaNoticias" dataCollection="favoritos" dataTransform="transformFunction" dataFilter="filterFunction" >
+				<ListItem info:text="{titulo}" es_info:text="{fecha}" es_info:dataInfo="{cuerpo}" pic:image="{imagen}" url:dataInfo="{enlace}" />
+			</ListSection>
+		</ListView>
+	</View>
+</Alloy>

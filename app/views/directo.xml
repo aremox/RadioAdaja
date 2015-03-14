@@ -1,0 +1,26 @@
+<Alloy>
+	<View id="central">
+		<View id="actionBar">
+			<ImageView id="botonMenu" onClick="mostrarMenu" />
+			<Label id="textoMenu" />
+			<ImageView id="botonRecargar" onClick="recargar" />
+		</View>
+		<View id="directoL">
+			<ImageView id="logo_directo" />
+			<Label id="titulo_directo" />
+		</View>
+		<View id="vAContinuacion">
+			<Label id="aContinuacion" />
+		</View>
+		<ListView id="listView" defaultItemTemplate="template">
+			<Templates>
+				<ItemTemplate name="template">
+					<Label bindId="info" id="title" />
+					<Label bindId="es_info" id="subtitle" />
+				</ItemTemplate>
+			</Templates>
+			<ListSection  id="listaProgramacion"></ListSection>
+			<ListSection  id="listaProgramacion2"></ListSection>
+		</ListView>
+	</View>
+</Alloy>

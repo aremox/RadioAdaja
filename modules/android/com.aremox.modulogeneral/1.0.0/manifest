@@ -1,0 +1,17 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+description: modulogeneral
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2014 by Your Company
+
+# these should not be edited
+name: modulogeneral
+moduleid: com.aremox.modulogeneral
+guid: d63e9847-3302-4ca0-b279-90ff833c2295
+platform: android
+minsdk: 3.4.0.GA
