@@ -19,6 +19,8 @@ Alloy.Globals.sonandoAhora = "nada";
 // Quitar caracteres innecesarios
 function quitarRetorno(cadena, retornos) {
 	cadena = cadena.replace(new RegExp('"', 'g'), '');
+	cadena = cadena.replace(/\\r/gi, "");
+	cadena = cadena.replace(/\\n/gi, "");
 	switch(retornos) {
 	case 0:
 
@@ -40,9 +42,14 @@ function obtenerDatos() {
 	var texto;
 	var data = [];
 	// Datos de radio adaja en remoto
-	var url = "https://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20data.html.cssselect%20WHERE%20url%3D'http%3A%2F%2Fradioadaja.es%2Fdirecto%2F'%20AND%20css%3D'div.home_programacion'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+	var url = "https://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20data.html.cssselect%20WHERE%20url%3D'http%3A%2F%2Fwww.radioadaja.es%2Fdirecto'%20AND%20css%3D'div.home_programacion%20div.fechador%20%2B%20ul%20li'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+	//var url = "https://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20data.html.cssselect%20WHERE%20url%3D'http%3A%2F%2Fwww.radioadaja.es%2Fdirecto'%20AND%20css%3D'div.home_programacion%20ul%20%3E%20li'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
 	var xhr = Ti.Network.createHTTPClient({
 		onload : function(e) {
+			//Ti.API.info('responseXML: ' + Titanium.XML.serializeToString(xhr.responseXML));
+        	//Ti.API.info('responseText.length: ' + this.responseText.length);
+        	//Ti.API.info('responseText: ' + this.responseText);
+        	//Ti.API.info('Available Memory: '+Ti.Platform.availableMemory);
 			var data = [];
 			var dias = [];
 			var itemCollection = [];
@@ -51,70 +58,74 @@ function obtenerDatos() {
 			Ti.API.info(JSON.stringify(doc));
 			if (JSON.stringify(doc.query.results != null)) {
 
-				//$.listaProgramacion.setHeaderTitle(quitarRetorno(JSON.stringify(doc.query.results.results.div.div[1].p), 1));
-				if (JSON.stringify(doc.query.results.results.div.div[2])) {
+				// Dia 2
+				/*if (JSON.stringify(doc.query.results.results.div.div[2])) {
 					var fecha2 = quitarRetorno(JSON.stringify(doc.query.results.results.div.div[2].p), 1);
 					$.listaProgramacion2.setHeaderTitle(fecha2);
 					Ti.API.info("Fecha de programas segundo dia: " + fecha2);
-				}
+				}*/
 				Ti.API.info("-------------ZONA Sonando ahora ------------------");
 				try {
-					//sonando ahora
-					if (JSON.stringify(doc.query.results.results.div.ul[0])) {
-						var lista_programas = doc.query.results.results.div.ul[0];
-						Ti.API.info("JSON Sonando ahora [0]: " + JSON.stringify(lista_programas));
-						dias = doc.query.results.results.div.ul;
-					} else {
-						var lista_programas = doc.query.results.results.div.ul;
-						Ti.API.info("JSON Sonando ahora: " + JSON.stringify(lista_programas));
+					//Obtener la lista de los programas
+					if (JSON.stringify(doc.query.results.results)) {
+						var lista_programas = doc.query.results.results;
+						Ti.API.info("JSON Lista de programas: " + JSON.stringify(lista_programas));
 						dias.push(lista_programas);
 					}
-				
-				
-				if (JSON.stringify(lista_programas.li[0].p.content)) {
+				} catch(e) {
+					alert("No se ha podido obtener lista de programas");
+					Ti.API.error("No se ha podido obtener lista de programas");
+				}
+				//try {
+				// sonando ahora
+				Ti.API.info(JSON.stringify(lista_programas.li[0]));
+				if (typeof JSON.stringify(lista_programas.li[0].content) != "undefined") {
+						sonandoAhora = JSON.stringify(lista_programas.li[0].content);
+						sonandoAhora = quitarRetorno(sonandoAhora, 1);
+						Ti.API.info("sonando ahora[0].content: "+sonandoAhora);
+					}
+				if (typeof JSON.stringify(lista_programas.li[0].p)!= "undefined") {
+				if (typeof JSON.stringify(lista_programas.li[0].p.content)!= "undefined") {
 					Ti.API.info("sonando ahora[0].p.content");
 					sonandoAhora = JSON.stringify(lista_programas.li[0].p.content);
 					sonandoAhora = quitarRetorno(sonandoAhora, 1);
-				} else {
-					if (JSON.stringify(lista_programas.li[0].p)) {
+				}
+				if (typeof JSON.stringify(lista_programas.li[0].p)!= "undefined") {
 						Ti.API.info("sonando ahora[0].p");
 						sonandoAhora = JSON.stringify(lista_programas.li[0].p);
 						sonandoAhora = quitarRetorno(sonandoAhora, 1);
-					} else {
+				}
+				}
+				
+				if (typeof JSON.stringify(lista_programas.li.p)!= "undefined") {
 						Ti.API.info("sonando ahora.p");
 						sonandoAhora = JSON.stringify(lista_programas.li.p);
 						sonandoAhora = quitarRetorno(sonandoAhora, 0);
-					}
 				}
+				
 				
 				Alloy.Globals.sonandoAhora = sonandoAhora;
 				Ti.API.info("sonando ahora: " + sonandoAhora);
 				$.titulo_directo.setText(sonandoAhora);
-				} catch(e) {
+				/*} catch(e) {
 					alert("No se ha podido obtener lo que suena ahora");
 					Ti.API.error("No se ha podido obtener lo que suena ahora");
-				}
-				try {
-				Ti.API.info("Dia 0: " + JSON.stringify(dias[0].li));
+				}*/
 				
-
+				
+				try {
+				//Pintar lista de programas
+				Ti.API.info("Dia 0: " + JSON.stringify(dias[0].li));
 				for (var z = 0; z < dias.length; z++) {
 					items = dias[z].li;
 					for (var i = 1; i < items.length; i++) {
 						Ti.API.info(JSON.stringify(items[i]));
-						if (items[i].div.p) {
-							var hora = JSON.stringify(items[i].div.p);
-						} else {
-							var hora = "Hora";
-						}
-						var hora = JSON.stringify(items[i].div.p);
-						var programa = JSON.stringify(items[i].p.content);
-						if (!programa) {
-							programa = JSON.stringify(items[i].p);
-							programa = quitarRetorno(programa, 0);
-						} else {
-							programa = quitarRetorno(programa, 1);
-						}
+						
+							var hora = quitarRetorno(JSON.stringify(items[i].div.content),1);
+						
+						
+						var programa = quitarRetorno(JSON.stringify(items[i].content),1);
+						
 
 						Ti.API.info("hora:" + hora + " || programa:" + programa);
 						var tmp = {
@@ -141,8 +152,8 @@ function obtenerDatos() {
 					itemCollection = [];
 				}
 				} catch(e) {
-					alert("No se ha podido obtener lista de programas");
-					Ti.API.error("No se ha podido obtener lista de programas");
+					alert("No se ha podido pintar lista de programas");
+					Ti.API.error("No se ha podido pintar lista de programas");
 				}
 			} else {
 				alerta();
@@ -161,7 +172,7 @@ function obtenerDatos() {
 			$.botonRecargar.setTouchEnabled(true);
 			Ti.API.info("++++++++++++++++++++++++ Boton habilitado ++++++++++++++++++++++++++++++++++++");
 		},
-		timeout : 10000 /* in milliseconds */
+		timeout : 120000 /* in milliseconds */
 	});
 	xhr.open("GET", url);
 	xhr.send();

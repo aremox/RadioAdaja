@@ -13,6 +13,7 @@
     <analytics>true</analytics>
     <guid>f31824b9-dfda-4bcf-8821-721cc71931bf</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="ti.android.threadstacksize" type="int">72000</property>
     <ios>
         <plist>
             <dict>
