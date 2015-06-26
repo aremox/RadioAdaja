@@ -10,11 +10,11 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
-if(Ti.App.Properties.getBool('primer',true)==true)
+/*if(Ti.App.Properties.getBool('primer',true)==true)
 {
 var db = Ti.Database.open('BD');
 //db.execute('DROP TABLE favoritos');
 db.execute('CREATE TABLE IF NOT EXISTS favoritos(id INTEGER PRIMARY KEY, titulo TEXT, cuerpo TEXT, imagen TEXT, marcado INTEGER, enlace TEXT, fecha TEXT)');
 db.close();
 Ti.App.Properties.setBool('primer',false);
-}
+}*/
