@@ -44,14 +44,16 @@ function refreshRss() {
 function recorrer(data,rows,retorno){
 	var tamano = data.length; 
 	var rows2 = [];
+	Ti.API.info("++++++++++"+ tamano + "++++++++++");
 	for (var i = 0; i < data.length; i++) {
 	rows2[i]=0;
 	}
+	Ti.API.info("++++++++++"+ data.length + "++++++++++");
 	for (var i = 0; i < data.length; i++) {
 	var item = data[i];
 	var z= 0;
 				rss.obtenerImagen(item,i,function(item,i) {
-			
+		
 				Ti.API.info("-------------------- I: "+i+"///"+ item.image+" --------------------------------");
 				var textoConvertido = "";
 				
@@ -108,11 +110,7 @@ function detalle(e){
 	html.convertirHTML(item.es_info.dataInfo,function (texto){ 
 					currentTextoNoticia = texto;
 				});
-	/*alert(
-        "itemIndex: " + e.itemIndex + "\n" +
-        "BindId: " + e.bindId + "\n" +
-        "Source: " + currentImage
-    );*/
+
    controller = Alloy.createController('detalle');
    var win = controller.getView();
    controller.setTitulo(currentTitulo); 

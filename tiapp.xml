@@ -105,7 +105,6 @@
         <target device="iphone">true</target>
         <target device="ipad">false</target>
         <target device="android">true</target>
-        <target device="blackberry">false</target>
         <target device="mobileweb">true</target>
     </deployment-targets>
     <sdk-version>4.0.0.RC4</sdk-version>
@@ -113,7 +112,7 @@
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
     <property name="appc-app-id"
-        type="string">558d6fc8c9c5556b121a8501</property>undefined
+        type="string">558d6fc8c9c5556b121a8501</property>
 <property
         name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
     <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
@@ -130,4 +129,5 @@
     <property name="acs-username-production" type="string">appc_app_user</property>
     <property name="acs-password-production" type="string">EgQEkyyFzHIcMpMG18</property>
     <property name="appc-org-id" type="string">100008863</property>
-    <property name="appc-creator-user-id" type="string">d65a5aa2-1abf-412b-a6a4-8c4d7bece7ab</property>undefined</ti:app>
+    <property name="appc-creator-user-id" type="string">d65a5aa2-1abf-412b-a6a4-8c4d7bece7ab</property>
+    </ti:app>

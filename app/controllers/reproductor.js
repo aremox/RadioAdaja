@@ -1,4 +1,6 @@
+if(OS_ANDROID) {
 var general = require('com.aremox.modulogeneral');
+}
 var audioPlayer = Ti.Media.createAudioPlayer({
 	url : 'http://173.236.61.226:80/stream',
 	allowBackground : true
@@ -19,7 +21,7 @@ function actualizarVolumen(e) {
 	audioPlayer.setVolume(e.value / 100);
 };
 setTimeout(function() {
-	Alloy.Globals.drawer.addEventListener('android:back', cerrar);
+	if(OS_ANDROID) {Alloy.Globals.drawer.addEventListener('android:back', cerrar);}
 	audioPlayer.stop();
 }, 2000);
 
@@ -30,11 +32,11 @@ function stopAudio(e) {
 	if (audioPlayer.playing || audioPlayer.paused) {
 		$.startStopButton.setImage("/material/ic_play_arrow_white_48dp.png");
 		audioPlayer.stop();
-		Ti.Android.NotificationManager.cancel(1);
+		if(OS_ANDROID) { Ti.Android.NotificationManager.cancel(1);}
 		Ti.API.info('Borrando general.sendAppToBackground()');
-		Alloy.Globals.drawer.removeEventListener('android:back', androidBack);
-		Alloy.Globals.drawer.addEventListener('android:back', cerrar);
 		if (Ti.Platform.name === 'android') {
+			Alloy.Globals.drawer.removeEventListener('android:back', androidBack);
+			Alloy.Globals.drawer.addEventListener('android:back', cerrar);
 			audioPlayer.release();
 		}
 	} else {
@@ -42,11 +44,13 @@ function stopAudio(e) {
 			Ti.API.info('Por aqui no tengo que pasar ' + $.estado.getText());
 			$.startStopButton.setImage("/material/ic_stop_white_48dp.png");
 			audioPlayer.start();
+			if(OS_ANDROID) {
 			customLayout.setTextViewText(AppR.id.title, Alloy.Globals.sonandoAhora);
 			Ti.Android.NotificationManager.notify(1, alarmTimeNotification);
 			Ti.API.info('Borrando cerrar()');
 			Alloy.Globals.drawer.removeEventListener('android:back', cerrar);
 			Alloy.Globals.drawer.addEventListener('android:back', androidBack);
+			}
 		}
 		if( $.estado.getText() == "cargando..."){
 			Ti.API.error('Fallo de conexión reinicio cuelgue: ' + Math.round(e.progress) + ' milliseconds');
@@ -61,12 +65,15 @@ function stopAudio(e) {
 	}
 };
 function androidBack() {
+	if(OS_ANDROID) {
 	general.sendAppToBackground();
+	}
 };
 
 function cerrar() {
+	if(OS_ANDROID) {
 	Alloy.Globals.drawer.removeEventListener('android:back', function() {
-	});
+	});}
 	var dialog = Ti.UI.createAlertDialog({
 		cancel : 1,
 		buttonNames : ['Sí', 'No'],
@@ -185,7 +192,7 @@ $.radio.addEventListener('close', function() {
 /////   Notificacion
 /////
 /////////////////////////////////////////////////////////////////////
-
+if(OS_ANDROID) {
 var activity = Ti.Android.currentActivity;
 var intent = Ti.Android.createIntent({
 	action : Ti.Android.ACTION_MAIN,
@@ -213,4 +220,4 @@ var alarmTimeNotification = Ti.Android.createNotification({
 	icon : Ti.App.Android.R.drawable.appicon,
 	flags : Titanium.Android.NotificationManager.FLAG_NO_CLEAR
 });
-
+}

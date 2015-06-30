@@ -36,14 +36,16 @@ Alloy.Globals.drawer = $.drawer;
 function noticias() {
 	$.noticias.visible = true;
 	$.favoritos.visible = false;
+	/*
 	for (var i = $.centroW.children.length - 1; i >= 0; i--) {
 		Ti.API.info($.centroW.children[i].id + " (" + i + ")");
 
 		if ($.centroW.children[i].id == "central" ) {
 			Ti.API.info("Se elimina: " + $.centroW.children[i].id + " (" + i + ")");
-			$.directo.visible = false;
+			
 		}
-	}
+	}*/
+	$.directo.visible = false;
 	$.drawer.toggleLeftWindow();
 	//animate back to center
 }
@@ -51,13 +53,15 @@ function noticias() {
 function directoBoton() {
 	$.directo.visible = true;
 	$.favoritos.visible = false;
+	/*
 	for (var i = $.centroW.children.length - 1; i >= 0; i--) {
 		Ti.API.info($.centroW.children[i].id + " (" + i + ")");
 		if ($.centroW.children[i].id == "noticias") {
 			Ti.API.info("Se elimina: " + $.centroW.children[i].id + " (" + i + ")");
-			$.noticias.visible = false;
+			
 		}
-	}
+	}*/
+	$.noticias.visible = false;
 	$.drawer.toggleLeftWindow();
 	//animate back to center
 }

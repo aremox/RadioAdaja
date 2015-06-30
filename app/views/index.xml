@@ -18,14 +18,14 @@
         </ListView>
 		</Window>
 		<Window id="centroW" module="xp.ui" role="centerWindow">
-			<!-- <Require src="directo" id="directoR" /> -->
+			 <!--<Require src="directo" id="directoR" /> -->
 			<Require src="reproductor" id="reproductor" />
 		</Window>
 
-		<!--
+		
 		<Window module="xp.ui" role="rightWindow">
 		<Label>I am right</Label>
 		</Window>
-		-->
+	
 	</Widget>
 </Alloy>

@@ -5,7 +5,7 @@
 			<ImageView id="botonMenu" onClick="mostrarMenu" />
 			<Label id="textoMenu" />
 			<ImageView id="botonFavorito" onClick="anadirFavorito" />
-			<ImageView id="botonRecargar" onClick="compartir" />
+			<ImageView id="botonRecargar" platform="android" onClick="compartir" />
 		</View>
 		<ImageView id="imagenNoticia"/>
 		<View id="vTitulo"><Label id="titulo"/></View>

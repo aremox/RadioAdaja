@@ -7,8 +7,12 @@ var fecha = "";
 var favoritos = Alloy.Collections.favoritos;
 
 function mostrarMenu() {
-	var actividad = $.index.getActivity();
-	actividad.finish();
+	if(OS_ANDROID) {
+		var actividad = $.index.getActivity();
+		actividad.finish();
+	}else{
+		$.index.close();
+	}
 }
 
 exports.setTitulo = function(etiqueta) {
@@ -109,6 +113,7 @@ function anadirFavorito() {
 }
 
 function comprobarFavorito() {
+	
 	$.botonFavorito.setImage("/material/ic_star_outline_white_48dp.png");
 	Ti.API.warn('paso por aqui marcado igual a ' + titulo);
 	var comprobacion = Alloy.createCollection("favoritos");
@@ -128,11 +133,12 @@ function comprobarFavorito() {
 			marcado = 1;
 		}
 	}
-
+	
 }
 
 //// Compartir /////////////
 function compartir() {
+	if(OS_ANDROID) {
 	var intent = Ti.Android.createIntent({
 		action : Ti.Android.ACTION_SEND,
 		type : "text/plain"
@@ -141,5 +147,6 @@ function compartir() {
 	intent.putExtra(Ti.Android.EXTRA_TEXT, titulo + ". Enlace: " + enlace);
 	intent.addCategory(Ti.Android.CATEGORY_DEFAULT);
 	Ti.Android.currentActivity.startActivity(intent);
+	}
 }
 
