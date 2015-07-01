@@ -11,9 +11,9 @@
                 </ItemTemplate>
             </Templates>
             <ListSection id="menuSection" >
-                <ListItem itemId="directoBoton" info:text="En directo"  pic:image="/banana.png"  />
-                <ListItem itemId="noticias" info:text="Noticias"  pic:image="/apple.png"  />
-                <ListItem itemId="favoritos" info:text="Favoritos"  pic:image="/apple.png"  />
+                <ListItem itemId="directoBoton" info:text="En directo"    />
+                <ListItem itemId="noticias" info:text="Noticias"    />
+                <ListItem itemId="favoritos" info:text="Favoritos"    />
             </ListSection>
         </ListView>
 		</Window>
@@ -23,9 +23,9 @@
 		</Window>
 
 		
-		<Window module="xp.ui" role="rightWindow">
+		<!--<Window module="xp.ui" role="rightWindow">
 		<Label>I am right</Label>
-		</Window>
+		</Window>-->
 	
 	</Widget>
 </Alloy>

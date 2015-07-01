@@ -23,6 +23,7 @@ $.botonRecargar.animate({
 	duration:500,
 	curve:Titanium.UI.ANIMATION_CURVE_EASE_IN_OUT
 });
+ 
 }
 
 function refreshRss() {
@@ -59,8 +60,9 @@ function recorrer(data,rows,retorno){
 				
 				
 				var tmp = {
+					
 						properties : {
-
+								
 						}, // properties for the template
 						pic : {
 							image : item.image,

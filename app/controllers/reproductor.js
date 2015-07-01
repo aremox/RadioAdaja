@@ -26,10 +26,11 @@ setTimeout(function() {
 }, 2000);
 
 function stopAudio(e) {
-	Ti.API.info('Se pulsa el boton de audio');
+	Ti.API.info('Se pulsa el boton de audio en stopAudio');
 	// When paused, playing returns false.
 	// If both are false, playback is stopped.
 	if (audioPlayer.playing || audioPlayer.paused) {
+		Ti.API.info('stopAudio if');
 		$.startStopButton.setImage("/material/ic_play_arrow_white_48dp.png");
 		audioPlayer.stop();
 		if(OS_ANDROID) { Ti.Android.NotificationManager.cancel(1);}
@@ -40,17 +41,20 @@ function stopAudio(e) {
 			audioPlayer.release();
 		}
 	} else {
-		if ($.estado.getText() == "en pausa..." || $.estado.getText() == "") {
+		Ti.API.info('stopAudio else');
+		Ti.API.info('Por aqui no tengo que pasar ' + $.estado.getText());
+		if ($.estado.getText() == "en pausa..." || $.estado.getText() == "" || $.estado.getText() == undefined) {
 			Ti.API.info('Por aqui no tengo que pasar ' + $.estado.getText());
 			$.startStopButton.setImage("/material/ic_stop_white_48dp.png");
 			audioPlayer.start();
 			if(OS_ANDROID) {
 			customLayout.setTextViewText(AppR.id.title, Alloy.Globals.sonandoAhora);
 			Ti.Android.NotificationManager.notify(1, alarmTimeNotification);
-			Ti.API.info('Borrando cerrar()');
+			
 			Alloy.Globals.drawer.removeEventListener('android:back', cerrar);
 			Alloy.Globals.drawer.addEventListener('android:back', androidBack);
 			}
+			Ti.API.info('Borrando cerrar()');
 		}
 		if( $.estado.getText() == "cargando..."){
 			Ti.API.error('Fallo de conexión reinicio cuelgue: ' + Math.round(e.progress) + ' milliseconds');
@@ -96,9 +100,11 @@ function cerrar() {
 			Ti.API.info('e.source.cancel: ' + e.source.cancel);
 			Ti.API.info('e.index: ' + e.index);
 			audioPlayer.stop();
+			if(OS_ANDROID) {
 			Ti.Android.NotificationManager.cancel(1);
 			var activity = Titanium.Android.currentActivity;
 			activity.finish();
+			}
 			break;
 
 		default:
@@ -152,7 +158,7 @@ audioPlayer.addEventListener('change', function(e) {
 		Ti.API.info('State: ' + e.description + ' (' + e.state + ')');
 		break;
 	case 2:
-		$.estado.setText("pausa");
+		$.estado.setText("cargando...");
 		Ti.API.info('State: ' + e.description + ' (' + e.state + ')');
 		break;
 	case 3:
@@ -160,7 +166,7 @@ audioPlayer.addEventListener('change', function(e) {
 		Ti.API.info('State: ' + e.description + ' (' + e.state + ')');
 		break;
 	case 4:
-		$.estado.setText("cargando...");
+		$.estado.setText("en directo...");
 		Ti.API.info('State: ' + e.description + ' (' + e.state + ')');
 		break;
 	case 5:
@@ -172,7 +178,7 @@ audioPlayer.addEventListener('change', function(e) {
 		Ti.API.info('State: ' + e.description + ' (' + e.state + ')');
 		break;
 	case 7:
-		$.estado.setText("Esperando datos");
+		$.estado.setText("en pausa...");
 		Ti.API.info('State: ' + e.description + ' (' + e.state + ')');
 		break;
 	}

@@ -48,7 +48,7 @@
 	rightValue: 50,
 	enabled: true
 },
-"#startStopButton":{
+"#startStopButton[platform=android]":{
 	backgroundImage: "/bg_publicidad.png",
 	image: "/material/ic_play_arrow_white_48dp.png",
 	top: 5,
@@ -56,4 +56,13 @@
 	width: "55dp",
 	height: "55dp",
 	borderRadius: 50
+},
+"#startStopButton[platform=ios]":{
+	backgroundImage: "/bg_publicidad.png",
+	image: "/material/ic_play_arrow_white_48dp.png",
+	top: 5,
+	left: 3,
+	width: "50dp",
+	height: "50dp",
+	borderRadius: 25
 }

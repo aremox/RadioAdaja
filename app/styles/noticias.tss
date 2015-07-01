@@ -35,53 +35,6 @@
 	},
 	left: "55dp"
 },
-"#logo_directo": {
-	top: 0,
-	left: 0,
-	height: "100%",
-	image: "/radioadajadirecto.png"
-},
-"#titulo_directo": {
-	color: '#232323',
-	right: "6dp",
-	font: {
-		fontFamily: 'Arial',
-		fontSize: '25dp',
-		fontWeight: 'bold'
-	},
-	textAlign:"Ti.UI.TEXT_ALIGNMENT_RIGHT",
-	shadowColor: '#999999',
-	shadowRadius: 6,
-	shadowOffset: {
-		x: 4,
-		y: 4
-	}
-},
-"#vAContinuacion":{
-	backgroundImage: "/bg_publicidad.png",
-	color: 'white',
-	top: "219dp",
-	height: "40dp",
-	width: "100%",
-	textAlign:"Ti.UI.TEXT_ALIGNMENT_LEFT",
-	zIndex: 5
-},
-"#aContinuacion": {
-	color: 'white',
-	font: {
-		fontFamily: 'Arial',
-		fontSize: '20dp',
-		fontWeight: 'bold'
-	},
-	shadowColor: '#333333',
-	shadowRadius: 6,
-	shadowOffset: {
-		x: 4,
-		y: 4
-	},
-	left: "6dp"
-	
-},
 "#listViewNoticias":{
 	top:"44dp",
 	separatorColor : "gray",
@@ -112,7 +65,14 @@
 	height: '100dp',
 	backgroundColor:'red'
 },
-"#icon":{
+"#icon[platform=android]":{
 	left: 0,
 	width: "100dp"
+},
+"#icon[platform=ios]":{
+	left: 0,
+	width: "100dp"
+},
+"#temp[platform=ios]":{
+	height: '60dp'
 }
