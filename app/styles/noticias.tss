@@ -67,11 +67,13 @@
 },
 "#icon[platform=android]":{
 	left: 0,
-	width: "100dp"
+	width: "100dp",
+	backgroundColor:'black'
 },
 "#icon[platform=ios]":{
 	left: 0,
-	width: "100dp"
+	width: "100dp",
+	backgroundColor:'black'
 },
 "#temp[platform=ios]":{
 	height: '60dp'
