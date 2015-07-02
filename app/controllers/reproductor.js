@@ -1,3 +1,4 @@
+Ti.API.warn("Prueba tamaño de pantalla:++++++++++++++++");
 if(OS_ANDROID) {
 var general = require('com.aremox.modulogeneral');
 }
