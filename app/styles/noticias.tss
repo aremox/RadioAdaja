@@ -5,7 +5,7 @@
 "#actionBar": {
 	top:0,
 	height:"44dp",
-	backgroundImage: "/bg_publicidad.png",
+	backgroundImage: "images/bg_publicidad.png",
 	color: 'white'
 },
 "#botonMenu": {
