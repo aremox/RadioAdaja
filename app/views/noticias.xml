@@ -1,5 +1,6 @@
 <Alloy>
 	<View id="noticias">
+		<View id="iosBar" platform="ios" />
 		<View id="actionBar">
 			<ImageView id="botonMenu" onClick="mostrarMenu" />
 			<Label id="textoMenu">Noticias</Label>

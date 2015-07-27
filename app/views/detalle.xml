@@ -1,6 +1,7 @@
 <Alloy>
 	<Window id="index" >
 	<View class="container">
+		<View id="iosBar" platform="ios" />
 		<View id="actionBar">
 			<ImageView id="botonMenu" onClick="mostrarMenu" />
 			<Label id="textoMenu" />

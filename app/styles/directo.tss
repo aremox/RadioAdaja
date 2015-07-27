@@ -1,10 +1,23 @@
+"#iosBar":{
+	top:0,
+	height:"18dp",
+	backgroundColor: '#33000000',
+	backgroundImage: "/images/bg_publicidad.png",
+	zIndex:10
+},
 "#central":{
 	bottom: "65dp"
 },
-"#actionBar": {
+"#actionBar[platform=ios]": {
+	top:"17dp",
+	height:"44dp",
+	backgroundImage: "/images/bg_publicidad.png",
+	color: 'white'
+},
+"#actionBar[platform=android]": {
 	top:0,
 	height:"44dp",
-	backgroundImage: "images/bg_publicidad.png",
+	backgroundImage: "/images/bg_publicidad.png",
 	color: 'white'
 },
 "#botonMenu": {
@@ -40,7 +53,13 @@
 	width: "100%",
 	height: "175dp"
 },
-"#logo_directo": {
+"#logo_directo[platform=ios]": {
+	top: "17dp",
+	left: 0,
+	height: "100%",
+	image: "/radioadajadirecto.png"
+},
+"#logo_directo[platform=android]": {
 	top: 0,
 	left: 0,
 	height: "100%",
@@ -63,7 +82,7 @@
 	}
 },
 "#vAContinuacion":{
-	backgroundImage: "images/bg_publicidad.png",
+	backgroundImage: "/images/bg_publicidad.png",
 	color: 'white',
 	top: "219dp",
 	height: "40dp",

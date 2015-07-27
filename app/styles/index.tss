@@ -45,5 +45,5 @@
 "ListItem":{
 	height: '60 dp',
 	zIndex: 3,
-	backgroundImage: "images/bg_publicidad.png"
+	backgroundImage: "/images/bg_publicidad.png"
 }

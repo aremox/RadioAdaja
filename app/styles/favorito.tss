@@ -1,11 +1,24 @@
+"#iosBar":{
+	top:0,
+	height:"18dp",
+	backgroundColor: '#33000000',
+	backgroundImage: "/images/bg_publicidad.png",
+	zIndex:10
+},
 "#favorito":{
 	bottom: "65dp",
 	visible: false
 },
-"#actionBar": {
+"#actionBar[platform=ios]": {
+	top:"17dp",
+	height:"44dp",
+	backgroundImage: "/images/bg_publicidad.png",
+	color: 'white'
+},
+"#actionBar[platform=android]": {
 	top:0,
 	height:"44dp",
-	backgroundImage: "images/bg_publicidad.png",
+	backgroundImage: "/images/bg_publicidad.png",
 	color: 'white'
 },
 "#botonMenu": {
@@ -58,7 +71,7 @@
 	}
 },
 "#vAContinuacion":{
-	backgroundImage: "images/bg_publicidad.png",
+	backgroundImage: "/images/bg_publicidad.png",
 	color: 'white',
 	top: "219dp",
 	height: "40dp",
@@ -82,7 +95,12 @@
 	left: "6dp"
 	
 },
-"#listViewNoticias":{
+"#listViewNoticias[platform=ios]":{
+	top:"61dp",
+	separatorColor : "gray",
+	zIndex: 4
+},
+"#listViewNoticias[platform=android]":{
 	top:"44dp",
 	separatorColor : "gray",
 	zIndex: 4
@@ -115,4 +133,7 @@
 "#icon":{
 	left: 0,
 	width: "100dp"
+},
+"#temp[platform=ios]":{
+	height: '60dp'
 }

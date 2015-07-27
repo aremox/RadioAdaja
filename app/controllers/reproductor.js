@@ -224,7 +224,7 @@ customLayout.setImageViewResource(Ti.App.Android.R.id.image, Ti.App.Android.R.dr
 var alarmTimeNotification = Ti.Android.createNotification({
 	contentIntent : pending,
 	contentView : customLayout,
-	icon : Ti.App.Android.R.drawable.appicon,
+	icon : Ti.App.Android.R.drawable.notico,
 	flags : Titanium.Android.NotificationManager.FLAG_NO_CLEAR
 });
 }

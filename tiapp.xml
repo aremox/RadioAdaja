@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.aremox.radioadaja</id>
-    <name>RadioAdaja3</name>
-    <version>1.5</version>
-    <publisher>arena_000</publisher>
+    <name>RadioAdaja</name>
+    <version>1.6</version>
+    <publisher>AremoX</publisher>
     <url>http://www.aremox.com</url>
     <description>Aplicación par escuchar Radio Adaja desde el móvil</description>
-    <copyright>2014 by arena_000</copyright>
+    <copyright>2015 by aremox</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>c4bbbd80-1836-41ad-9555-ee81c2c31780</guid>
+    <guid>6419382d-74d3-49bb-9ddd-ee81c2c31780</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <property name="ti.android.threadstacksize" type="int">72000</property>
     <ios>
@@ -40,17 +40,16 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest>
-            <!-- <application android:icon="@drawable/appicon" android:label="RadioAdaja3" android:name="Radioadaja3Application" android:debuggable="false" android:theme="@style/Theme.AppCompat"> -->
+        <manifest android:versionCode="6">
             <application android:debuggable="false"
                 android:icon="@drawable/appicon"
-                android:label="RadioAdaja3"
-                android:name="Radioadaja3Application"
+                android:label="RadioAdaja"
+                android:name="RadioadajaApplication"
                     android:theme="@style/Theme.NoActionBar"> --&gt;
       <activity
                     android:configChanges="keyboardHidden|screenSize"
                     android:label="@string/app_name"
-                    android:name=".Radioadaja3Activity"
+                    android:name=".RadioadajaActivity"
                     android:screenOrientation="portrait" android:theme="@style/Theme.Titanium">
                     <intent-filter>
                         <action android:name="android.intent.action.MAIN"/>
@@ -96,38 +95,20 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="iphone">dk.napp.drawer</module>
-        <module platform="android">dk.napp.drawer</module>
+        <module platform="iphone" version="1.2.2">dk.napp.drawer</module>
+        <module platform="android" version="1.1.5">dk.napp.drawer</module>
         <module platform="android">com.aremox.modulogeneral</module>
         <module platform="commonjs">ti.cloud</module>
     </modules>
     <deployment-targets>
-        <target device="iphone">true</target>
-        <target device="ipad">false</target>
         <target device="android">true</target>
-        <target device="mobileweb">true</target>
+        <target device="ipad">false</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">false</target>
     </deployment-targets>
     <sdk-version>4.0.0.RC4</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
-    <property name="appc-app-id"
-        type="string">558d6fc8c9c5556b121a8501</property>
-<property
-        name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
-    <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
-    <property name="acs-oauth-secret-development" type="string">3Qy5Q42vfja1FNVpseDrFM72zItsomzH</property>
-    <property name="acs-oauth-key-development" type="string">AwEHfwa0LMEaG5jOUwAW8JjFi1ENAoVx</property>
-    <property name="acs-api-key-development" type="string">w2JEWw9kFoZPZYMx7cGg8VRFzVJPYZWk</property>
-    <property name="acs-username-development" type="string">appc_app_user_dev</property>
-    <property name="acs-password-development" type="string">N46shcryy5yyg4pQt1</property>
-    <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
-    <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
-    <property name="acs-oauth-secret-production" type="string">cHEiY8HqugQWsFO0eqnEWRk7acEKpzav</property>
-    <property name="acs-oauth-key-production" type="string">V64O7Jryd8qkcBF81dlG0gyhnN30lbBy</property>
-    <property name="acs-api-key-production" type="string">VmixJnu5E1hQvUKxShiIYJMEFvI3Pkw5</property>
-    <property name="acs-username-production" type="string">appc_app_user</property>
-    <property name="acs-password-production" type="string">EgQEkyyFzHIcMpMG18</property>
-    <property name="appc-org-id" type="string">100008863</property>
-    <property name="appc-creator-user-id" type="string">d65a5aa2-1abf-412b-a6a4-8c4d7bece7ab</property>
-    </ti:app>
+    <property name="appc-app-id" type="string">55af9e12e6c3361e5e13a34c</property>
+</ti:app>

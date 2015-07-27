@@ -1,4 +1,10 @@
-
+"#iosBar":{
+	top:0,
+	height:"18dp",
+	backgroundColor: '#33000000',
+	backgroundImage: "/images/bg_publicidad.png",
+	zIndex:10
+},
 ".container" : {
   backgroundColor:'white',
   layout: 'vertical'
@@ -7,7 +13,7 @@
 "#actionBar": {
 	top:0,
 	height:"44dp",
-	backgroundImage: "images/bg_publicidad.png",
+	backgroundImage: "/images/bg_publicidad.png",
 	color: 'white'
 },
 "#botonMenu": {
@@ -36,7 +42,7 @@
 	height: "30%"
 },
 "#vTitulo":{
-	backgroundImage: "images/bg_publicidad.png",
+	backgroundImage: "/images/bg_publicidad.png",
 	verticalAlign: "Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP",
 	height: "40dp"
 },
